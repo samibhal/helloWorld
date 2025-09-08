@@ -1,0 +1,46 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class guessRandomNumber.txt {
+	public static void main(String[] args) {
+		Random rnd = new Random();
+		Scanner scnr = new Scanner(System.in);
+		
+		Boolean wonGame = true; //will be used in infinite loop later in the program
+		int guess; 
+		
+		int randNum = rnd.nextInt(10); //range is 0 - 9 
+		randNum ++; //changing range to 1 - 10
+		
+		
+		//Game Initializing
+		
+		
+		System.out.println("Welcome to the Number Guessing Game!");
+		System.out.print("The number is between 1 - 10."); 
+		System.out.println("Please give a guess in the form of an integer.");
+		
+		guess = scnr.nextInt();
+		
+		
+		//Game Loop 
+		
+		
+		while (wonGame) { //will loop infinitely until the user guesses the correct number
+		
+		    if (guess == randNum) {
+		        System.out.println("Congratulations! You've guessed the correct number.");
+		        wonGame = false; //will exit out of the loop 
+		        
+		    } else if (guess > randNum) {
+		        System.out.println("Too high, try again.");
+		        guess = scnr.nextInt();
+		        
+		    } else {
+		        System.out.println("Too low, try again.");
+		        guess = scnr.nextInt();
+		    }
+		}
+		
+	}
+}
